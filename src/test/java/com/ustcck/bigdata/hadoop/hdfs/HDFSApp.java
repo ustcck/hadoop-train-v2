@@ -71,6 +71,16 @@ public class HDFSApp {
         System.out.println(result);
     }
 
+    /**
+     * copy本地文件到hdfs文件系统
+     */
+    @Test
+    public void copyFromLocalFile() throws IOException {
+        Path src = new Path("D:\\lenovo.template");
+        Path dst = new Path("/hdfsapi/test/");
+        fileSystem.copyFromLocalFile(src, dst);
+    }
+
     @Test
     public void testReplication() {
         System.out.println(configuration.get("dfs.replication"));
